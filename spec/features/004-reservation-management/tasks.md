@@ -1,0 +1,7 @@
+- [ ] Create Reservation Prisma model: userId (relation), showtimeId (relation), seats (JSON), status (Enum), createdAt
+- [ ] Create Zod validation schemas for seat selection
+- [ ] Implement transactional reservation controller using Prisma tx
+- [ ] Create routes with User auth middleware
+- [ ] Implement seat availability and overbooking prevention
+- [ ] Implement cancellation (future only)
+- [ ] Write integration tests

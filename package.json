@@ -1,0 +1,29 @@
+{
+  "name": "movie-reservation-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierjuanJJ/Movie-Reservation-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/javierjuanJJ/Movie-Reservation-System/issues"
+  },
+  "homepage": "https://github.com/javierjuanJJ/Movie-Reservation-System#readme",
+  "dependencies": {
+    "better-auth": "1.7.2",
+    "express": "^5.2.1",
+    "resend": "6.25.0",
+    "stripe": "22.6.0",
+    "twilio": "6.1.0",
+    "zod": "4.5.4"
+  }
+}

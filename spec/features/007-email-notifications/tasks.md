@@ -1,0 +1,4 @@
+- [ ] Install Resend SDK (or SendGrid)
+- [ ] Create email service wrapper class
+- [ ] Create email notification endpoint
+- [ ] Write integration tests

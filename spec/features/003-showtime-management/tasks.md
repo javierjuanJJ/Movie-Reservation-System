@@ -1,0 +1,5 @@
+- [ ] Create Showtime Prisma model: movieId (relation), hall (String), date (DateTime), price (Float)
+- [ ] Create Zod validation schema
+- [ ] Implement Showtime controller
+- [ ] Create showtime routes with Admin middleware
+- [ ] Write integration tests

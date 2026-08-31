@@ -1,0 +1,5 @@
+- [ ] Create Movie Prisma model: title (String), description (String), poster (String), genre (String)
+- [ ] Create Zod validation schemas
+- [ ] Implement Movie controller with CRUD methods
+- [ ] Create movie routes with Admin auth middleware
+- [ ] Write integration tests for movie CRUD

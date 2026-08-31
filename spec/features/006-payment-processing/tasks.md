@@ -1,0 +1,5 @@
+- [ ] Install and configure stripe SDK
+- [ ] Create PaymentIntent route handler
+- [ ] Create payment confirmation handler
+- [ ] Update Reservation model with payment status
+- [ ] Write integration tests

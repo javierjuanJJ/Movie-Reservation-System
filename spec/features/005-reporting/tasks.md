@@ -1,0 +1,4 @@
+- [ ] Create Report controller: getAllReservations, getRevenue
+- [ ] Create report routes with Admin middleware
+- [ ] Implement revenue calculation logic
+- [ ] Write integration tests

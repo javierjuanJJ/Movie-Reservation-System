@@ -1,0 +1,53 @@
+generator client {
+  provider = "postgresql"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(uuid())
+  email       String    @unique
+  password    String
+  role        String    @default("USER")
+  createdAt   DateTime  @default(now())
+  reservations Reservation[]
+  movies      Movie[]
+}
+
+model Movie {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  poster      String?
+  genre       String?
+  createdAt   DateTime  @default(now())
+  showtimes   Showtime[]
+  reservations Reservation[]
+}
+
+model Showtime {
+  id           String    @id @default(uuid())
+  movie        Movie     @relation(fields: [movieId], references: [id])
+  movieId      String
+  hall         String
+  date         DateTime
+  price        Float
+  reservations Reservation[]
+}
+
+model Reservation {
+  id           String    @id @default(uuid())
+  user         User      @relation(fields: [userId], references: [id])
+  userId       String
+  showtime     Showtime  @relation(fields: [showtimeId], references: [id])
+  showtimeId   String
+  seats        Json      // JSON array of {row, number}
+  status       String    @default("confirmed")
+  cancelledAt  DateTime?
+  createdAt    DateTime  @default(now())
+  paymentStatus String    @default("pending")
+  paymentIntentId String?
+}
