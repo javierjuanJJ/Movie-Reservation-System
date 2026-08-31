@@ -10,3 +10,9 @@ node_modules/
 # Ignore IDE files
 .vscode/
 .idea/
+
+# Ignore zip packages
+*.zip
+
+# Ignore opencode config
+opencode.json
