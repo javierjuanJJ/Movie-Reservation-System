@@ -1,5 +1,6 @@
-import { BetterAuth } from 'better-auth';
-import { prismaAdapter } from 'better-auth/adapters/prisma';
+import { betterAuth } from 'better-auth';
+import { prismaAdapter } from '@better-auth/prisma-adapter';
+import { auth } from '../lib/auth.js';
 
 export const authMiddleware = async (req, res, next) => {
   try {
@@ -8,12 +9,6 @@ export const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ message: 'Missing or invalid token' });
     }
     const token = authHeader.split(' ')[1];
-    
-    // Initialize better-auth with prisma adapter
-    const auth = new BetterAuth({
-      database: prismaAdapter(/* prisma client */),
-      // ... config
-    });
     
     const session = await auth.api.getSession({ token });
     if (!session?.user) {

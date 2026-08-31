@@ -1,4 +1,5 @@
 import { signupSchema, loginSchema } from '../schemas/movies.js';
+import bcrypt from 'bcrypt';
 
 export const authController = {
   async signup(req, res) {
@@ -8,6 +9,13 @@ export const authController = {
     }
     
     const { email, password, name } = result.data;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    
+    // TODO: Create user in database with Prisma
+    // await prisma.user.create({
+    //   data: { email, password: hashedPassword, role: 'USER', name }
+    // });
+    
     return res.status(201).json({ message: 'User created', email });
   },
 
@@ -16,6 +24,13 @@ export const authController = {
     if (!result.success) {
       return res.status(400).json({ message: result.error.errors });
     }
+    
+    const { email, password } = result.data;
+    // TODO: Verify user credentials against database
+    // const user = await prisma.user.findUnique({ where: { email } });
+    // if (!user || !(await bcrypt.compare(password, user.password))) {
+    //   return res.status(401).json({ message: 'Invalid credentials' });
+    // }
     
     return res.json({ message: 'Logged in' });
   },
