@@ -1,9 +1,9 @@
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from '@better-auth/prisma-adapter';
-import { resolvers } from 'better-auth/resolvers';
+import prisma from './prisma.js';
 
 export const auth = betterAuth({
-  database: prismaAdapter(/* prisma client */, {
+  database: prismaAdapter(prisma, {
     provider: 'postgresql',
   }),
   emailAndPassword: {
@@ -21,8 +21,4 @@ export const auth = betterAuth({
     passwordExpiresIn: '30d',
     sessionExpiresIn: '30d',
   },
-  plugins: [
-    resolvers.emailVerification(),
-    resolvers.passwordReset(),
-  ],
 });

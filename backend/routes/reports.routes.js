@@ -1,6 +1,5 @@
-import { reportSchema } from '../schemas/reports.js';
 import { reportController } from '../controllers/reports.controller.js';
-import { authorize } from '../middlewares/auth.js';
+import { authMiddleware, authorize } from '../middlewares/auth.js';
 
 const router = (await import('express')).Router();
 

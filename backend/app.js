@@ -3,13 +3,13 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import { errorHandler } from './middlewares/error.js';
-import authRoutes from './routes/auth.js';
-import movieRoutes from './routes/movies.js';
-import showtimeRoutes from './routes/showtimes.js';
-import reservationRoutes from './routes/reservations.js';
-import paymentRoutes from './routes/payments.js';
-import reportRoutes from './routes/reports.js';
-import notificationRoutes from './routes/notifications.js';
+import authRoutes from './routes/auth.routes.js';
+import movieRoutes from './routes/movies.routes.js';
+import showtimeRoutes from './routes/showtimes.routes.js';
+import reservationRoutes from './routes/reservations.routes.js';
+import paymentRoutes from './routes/payments.routes.js';
+import reportRoutes from './routes/reports.routes.js';
+import notificationRoutes from './routes/notifications.routes.js';
 
 const app = express();
 

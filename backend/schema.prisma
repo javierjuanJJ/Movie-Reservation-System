@@ -1,5 +1,5 @@
 generator client {
-  provider = "postgresql"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -14,7 +14,6 @@ model User {
   role        String    @default("USER")
   createdAt   DateTime  @default(now())
   reservations Reservation[]
-  movies      Movie[]
 }
 
 model Movie {
@@ -25,7 +24,6 @@ model Movie {
   genre       String?
   createdAt   DateTime  @default(now())
   showtimes   Showtime[]
-  reservations Reservation[]
 }
 
 model Showtime {

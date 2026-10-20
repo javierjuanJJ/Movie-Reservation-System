@@ -1,6 +1,6 @@
 import { createShowtimeSchema } from '../schemas/movies.js';
 import { showtimeController } from '../controllers/showtime.controller.js';
-import { authMiddleware } from '../middlewares/auth.js';
+import { authMiddleware, authorize } from '../middlewares/auth.js';
 
 const router = (await import('express')).Router();
 

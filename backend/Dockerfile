@@ -12,10 +12,7 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy prisma schema from backend
-COPY backend/schema.prisma ./prisma/schema.prisma
-
-# Copy backend code
+# Copy backend code (includes schema.prisma used by Prisma)
 COPY backend/ ./backend/
 
 # Generate Prisma Client
